@@ -1,0 +1,61 @@
+<div cdkDropListGroup>
+  <div class="example-container">
+   <br><br><br><br>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="items"
+      class="example-list"
+      cdkDropListSortingDisabled
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of items" cdkDrag ><h2>{{item}}</h2></div>
+      <ng-container *ngIf="items=='Button'">
+          <app-button cdkDrag></app-button>
+      </ng-container>
+      <ng-container *ngIf="items=='Textbox'">
+          <app-textbox cdkDrag></app-textbox>
+      </ng-container>
+      <ng-container *ngIf="items=='Header'">
+          <app-header cdkDrag></app-header>
+      </ng-container>
+      <ng-container *ngIf="items=='Footer'">
+          <app-footer cdkDrag></app-footer>
+      </ng-container>
+      <ng-container *ngIf="items=='Table'">
+          <app-table cdkDrag></app-table>
+      </ng-container>
+      <ng-container *ngIf="items=='Dropdown'">
+          <app-dropdown cdkDrag></app-dropdown>
+      </ng-container>
+      <ng-container *ngIf="items=='Time'">
+          <app-time cdkDrag></app-time>
+      </ng-container>
+      <ng-container *ngIf="items=='Mask'">
+          <app-mask cdkDrag></app-mask>
+      </ng-container>
+      <ng-container *ngIf="items=='Divider'">
+          <app-divider cdkDrag></app-divider>
+      </ng-container>
+      <ng-container *ngIf="items=='Spinner'">
+          <app-spinner cdkDrag></app-spinner>
+      </ng-container>
+    </div> 
+  </div>
+
+  <div class="example-container">
+    <h2>Drag item from the list</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="basket"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of basket" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
